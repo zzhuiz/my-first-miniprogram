@@ -1,0 +1,276 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* 活动封面 */
+.activity-cover {
+  width: 100%;
+  height: 400rpx;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.activity-cover image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 活动信息 */
+.activity-info {
+  background-color: var(--card-background);
+  padding: 36rpx;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: -30rpx 20rpx 20rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.activity-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 24rpx;
+  display: block;
+  line-height: 1.3;
+}
+
+.activity-meta {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24rpx;
+}
+
+.meta-item {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  margin-bottom: 12rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 12rpx;
+  color: var(--primary-color);
+  font-size: 20rpx;
+}
+
+.activity-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid var(--border-color);
+}
+
+.stats-item {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.stats-item::before {
+  content: '';
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-right: 8rpx;
+}
+
+.activity-desc {
+  margin-top: 24rpx;
+}
+
+.desc-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.desc-content {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* 报名表单 */
+.apply-form {
+  background-color: var(--card-background);
+  padding: 36rpx;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 20rpx 20rpx;
+}
+
+.form-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 24rpx;
+  display: block;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  display: block;
+  font-size: 24rpx;
+  color: var(--text-color);
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  height: 88rpx;
+  border: 1rpx solid var(--border-color);
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  background-color: var(--card-background);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  height: 200rpx;
+  border: 1rpx solid var(--border-color);
+  border-radius: 12rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  resize: none;
+  background-color: var(--card-background);
+  transition: border-color 0.2s ease;
+}
+
+.textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  height: 88rpx;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12rpx;
+  margin-top: 30rpx;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #0066CC;
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+}
+
+.submit-button:disabled {
+  background-color: #E5E5EA;
+  color: #8E8E93;
+  box-shadow: none;
+}
+
+/* 已报名提示 */
+.applied-tip {
+  background-color: var(--card-background);
+  padding: 36rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 20rpx 20rpx;
+}
+
+.tip-text {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.tip-status {
+  font-size: 24rpx;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+/* 活动已满提示 */
+.full-tip {
+  background-color: var(--card-background);
+  padding: 36rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 20rpx 20rpx;
+}
+
+.full-tip .tip-text {
+  color: var(--error-color);
+}
+
+/* 管理员操作 */
+.admin-actions {
+  padding: 0 20rpx 30rpx;
+}
+
+.admin-button {
+  width: 100%;
+  height: 88rpx;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12rpx;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.admin-button:hover {
+  background-color: #0066CC;
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  .activity-info,
+  .apply-form,
+  .applied-tip,
+  .full-tip {
+    padding: 28rpx;
+  }
+  
+  .activity-title {
+    font-size: 32rpx;
+  }
+  
+  .input,
+  .textarea {
+    font-size: 24rpx;
+  }
+  
+  .submit-button,
+  .admin-button {
+    height: 80rpx;
+    font-size: 16px;
+  }
+}

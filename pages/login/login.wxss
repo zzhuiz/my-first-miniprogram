@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 30rpx;
+  background-color: var(--background-color);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 120rpx;
+  padding-top: 100rpx;
+}
+
+.logo image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 40rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+
+.auth-section {
+  width: 100%;
+  margin-bottom: 60rpx;
+  padding: 0 20rpx;
+}
+
+.auth-button {
+  width: 100%;
+  height: 88rpx;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.auth-button:hover {
+  background-color: #0066CC;
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+}
+
+.tips {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 0 40rpx;
+  line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  .logo image {
+    width: 180rpx;
+    height: 180rpx;
+  }
+  
+  .title {
+    font-size: 32rpx;
+  }
+  
+  .auth-button {
+    height: 80rpx;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="status-section" wx:if="{{status === 'loading'}}">
+    <image class="status-icon" src="../../images/home.png"></image>
+    <text class="status-text">正在验证...</text>
+  </view>
+  
+  <view class="status-section" wx:elif="{{status === 'success'}}">
+    <image class="status-icon success" src="../../images/home.png"></image>
+    <text class="status-text success">签到成功</text>
+    <text class="status-desc">{{activity.title}}</text>
+    <text class="status-time">{{activity.time}}</text>
+  </view>
+  
+  <view class="status-section" wx:elif="{{status === 'error'}}">
+    <image class="status-icon error" src="../../images/home.png"></image>
+    <text class="status-text error">签到失败</text>
+    <text class="status-desc">{{errorMessage}}</text>
+  </view>
+</view>

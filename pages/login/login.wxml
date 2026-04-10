@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="logo">
+    <image src="../../images/home.png" mode="aspectFit"></image>
+    <text class="title">校园社团活动报名</text>
+    <text class="subtitle">发现校园精彩，参与社团活动</text>
+  </view>
+  
+  <view class="auth-section">
+    <button 
+      bindtap="getUserProfile" 
+      class="auth-button"
+    >
+      微信授权登录
+    </button>
+  </view>
+  
+  <view class="tips">
+    <text>登录后可查看活动、报名参与</text>
+  </view>
+</view>

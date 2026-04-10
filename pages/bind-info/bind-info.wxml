@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="header">
+    <text class="title">绑定个人信息</text>
+    <text class="subtitle">请填写以下信息完成绑定</text>
+  </view>
+  
+  <view class="form">
+    <view class="form-item">
+      <text class="label">学号</text>
+      <input 
+        class="input" 
+        placeholder="请输入学号" 
+        bindinput="onStudentIdChange"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input 
+        class="input" 
+        placeholder="请输入姓名" 
+        bindinput="onNameChange"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">学院</text>
+      <input 
+        class="input" 
+        placeholder="请输入学院" 
+        bindinput="onCollegeChange"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">手机号</text>
+      <input 
+        class="input" 
+        placeholder="请输入手机号" 
+        type="number" 
+        bindinput="onPhoneChange"
+      />
+    </view>
+    
+    <button 
+      class="submit-button" 
+      bindtap="onSubmit"
+      disabled="{{!canSubmit}}"
+    >
+      提交绑定
+    </button>
+  </view>
+</view>

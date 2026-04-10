@@ -1,0 +1,103 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20rpx;
+}
+
+.header {
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  display: block;
+}
+
+.activity-info {
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.activity-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.activity-time,
+.activity-location {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.qrcode-section {
+  background-color: white;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+.qrcode-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.qrcode {
+  width: 400rpx;
+  height: 400rpx;
+  background-color: #f0f0f0;
+}
+
+.qrcode-tip {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.stats {
+  background-color: white;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats-item {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.refresh-button {
+  width: 100%;
+  height: 80rpx;
+  background-color: #07C160;
+  color: white;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+}

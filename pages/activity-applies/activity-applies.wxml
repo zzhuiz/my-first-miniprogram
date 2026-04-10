@@ -1,0 +1,69 @@
+<view class="container">
+  <view class="header">
+    <text class="title">报名管理</text>
+  </view>
+  
+  <!-- 报名列表 -->
+  <view class="applies-list">
+    <view 
+      wx:for="{{applies}}" 
+      wx:key="{{item._id}}"
+      class="apply-item"
+    >
+      <view class="apply-info">
+        <text class="apply-name">{{item.user.name}}</text>
+        <text class="apply-studentId">{{item.user.studentId}}</text>
+        <text class="apply-college">{{item.user.college}}</text>
+        <text class="apply-phone">{{item.user.phone}}</text>
+        <text class="apply-remark">{{item.formData.remark}}</text>
+        <text class="apply-time">报名时间：{{formatTime(item.createdAt)}}</text>
+      </view>
+      
+      <view class="apply-actions">
+        <view class="status-badge {{item.status === 'pending' ? 'pending' : item.status === 'approved' ? 'approved' : 'rejected'}}">
+          {{item.status === 'pending' ? '待审核' : item.status === 'approved' ? '已通过' : '已拒绝'}}
+        </view>
+        
+        <view wx:if="{{item.status === 'pending'}}">
+          <button 
+            class="action-button approve" 
+            bindtap="onApprove"
+            data-id="{{item._id}}"
+          >
+            通过
+          </button>
+          <button 
+            class="action-button reject" 
+            bindtap="onReject"
+            data-id="{{item._id}}"
+          >
+            拒绝
+          </button>
+        </view>
+        
+        <button 
+          wx:if="{{item.status === 'approved' && !item.signed}}" 
+          class="action-button signin" 
+          bindtap="onSignin"
+          data-id="{{item._id}}"
+        >
+          签到
+        </button>
+        
+        <text wx:if="{{item.signed}}" class="signed-badge">已签到</text>
+      </view>
+    </view>
+    
+    <!-- 无报名记录 -->
+    <view class="no-applies" wx:if="{{applies.length === 0}}">
+      <text>暂无报名记录</text>
+    </view>
+  </view>
+  
+  <!-- 数据统计 -->
+  <view class="stats">
+    <text class="stats-item">总报名数：{{totalApplies}}</text>
+    <text class="stats-item">已通过：{{approvedApplies}}</text>
+    <text class="stats-item">已签到：{{signedApplies}}</text>
+  </view>
+</view>

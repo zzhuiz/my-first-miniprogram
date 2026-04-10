@@ -1,0 +1,105 @@
+<view class="container">
+  <!-- 活动封面 -->
+  <image class="activity-cover" src="{{activity.cover || '../../images/home.png'}}" mode="aspectFill"></image>
+  
+  <!-- 活动信息 -->
+  <view class="activity-info">
+    <text class="activity-title">{{activity.title}}</text>
+    <view class="activity-meta">
+      <text class="meta-item">
+        <icon class="icon" type="clock" size="20"></icon>
+        {{activity.time}}
+      </text>
+      <text class="meta-item">
+        <icon class="icon" type="location" size="20"></icon>
+        {{activity.location}}
+      </text>
+    </view>
+    <view class="activity-stats">
+      <text class="stats-item">
+        报名人数：{{activity.applyCount}}/{{activity.maxParticipants}}人
+      </text>
+      <text class="stats-item">
+        发布时间：{{formatTime(activity.createdAt)}}
+      </text>
+    </view>
+    <view class="activity-desc">
+      <text class="desc-title">活动介绍</text>
+      <text class="desc-content">{{activity.description}}</text>
+    </view>
+  </view>
+  
+  <!-- 报名表单 -->
+  <view class="apply-form" wx:if="{{!hasApplied && activity.applyCount < activity.maxParticipants}}">
+    <text class="form-title">报名信息</text>
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input 
+        class="input" 
+        value="{{user.name}}" 
+        disabled
+      />
+    </view>
+    <view class="form-item">
+      <text class="label">学号</text>
+      <input 
+        class="input" 
+        value="{{user.studentId}}" 
+        disabled
+      />
+    </view>
+    <view class="form-item">
+      <text class="label">学院</text>
+      <input 
+        class="input" 
+        value="{{user.college}}" 
+        disabled
+      />
+    </view>
+    <view class="form-item">
+      <text class="label">手机号</text>
+      <input 
+        class="input" 
+        value="{{user.phone}}" 
+        disabled
+      />
+    </view>
+    <view class="form-item">
+      <text class="label">自我介绍/备注</text>
+      <textarea 
+        class="textarea" 
+        placeholder="请输入自我介绍或备注信息" 
+        bindinput="onRemarkChange"
+        value="{{remark}}"
+      ></textarea>
+    </view>
+    <button 
+      class="submit-button" 
+      bindtap="onApply"
+      disabled="{{!remark}}"
+    >
+      立即报名
+    </button>
+  </view>
+  
+  <!-- 已报名提示 -->
+  <view class="applied-tip" wx:if="{{hasApplied}}">
+    <text class="tip-text">您已经报名过该活动</text>
+    <text class="tip-status">状态：{{applyStatus}}</text>
+  </view>
+  
+  <!-- 活动已满提示 -->
+  <view class="full-tip" wx:if="{{activity.applyCount >= activity.maxParticipants}}">
+    <text class="tip-text">活动报名人数已满</text>
+  </view>
+  
+  <!-- 管理员操作 -->
+  <view class="admin-actions" wx:if="{{isPublisher}}">
+    <button 
+      class="admin-button" 
+      bindtap="onViewApplies"
+    >
+      查看报名列表
+    </button>
+  </view>
+</view>

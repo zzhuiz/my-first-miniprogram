@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user-info">
+    <view class="avatar">
+      <image src="{{user.avatar || '../../images/home.png'}}"></image>
+    </view>
+    <view class="user-details">
+      <text class="user-name">{{user.name || user.nickname}}</text>
+      <text class="user-studentId">{{user.studentId}}</text>
+      <text class="user-college">{{user.college}}</text>
+    </view>
+  </view>
+  
+  <!-- 标签切换 -->
+  <view class="tab-bar">
+    <view 
+      class="tab-item {{currentTab === 'all' ? 'active' : ''}}" 
+      bindtap="onTabChange"
+      data-tab="all"
+    >
+      全部
+    </view>
+    <view 
+      class="tab-item {{currentTab === 'pending' ? 'active' : ''}}" 
+      bindtap="onTabChange"
+      data-tab="pending"
+    >
+      待审核
+    </view>
+    <view 
+      class="tab-item {{currentTab === 'approved' ? 'active' : ''}}" 
+      bindtap="onTabChange"
+      data-tab="approved"
+    >
+      已通过
+    </view>
+    <view 
+      class="tab-item {{currentTab === 'rejected' ? 'active' : ''}}" 
+      bindtap="onTabChange"
+      data-tab="rejected"
+    >
+      已拒绝
+    </view>
+  </view>
+  
+  <!-- 报名列表 -->
+  <view class="applies-list">
+    <view 
+      wx:for="{{filteredApplies}}" 
+      wx:key="{{item._id}}"
+      class="apply-item"
+      bindtap="onActivityTap"
+      data-id="{{item.activity._id}}"
+    >
+      <view class="activity-cover">
+        <image src="{{item.activity.cover || '../../images/home.png'}}"></image>
+      </view>
+      <view class="apply-info">
+        <text class="activity-title">{{item.activity.title}}</text>
+        <view class="activity-meta">
+          <text class="activity-time">{{item.activity.time}}</text>
+          <text class="activity-location">{{item.activity.location}}</text>
+        </view>
+        <view class="apply-status">
+          <text class="status-badge {{item.status === 'pending' ? 'pending' : item.status === 'approved' ? 'approved' : 'rejected'}}">
+            {{item.status === 'pending' ? '待审核' : item.status === 'approved' ? '已通过' : '已拒绝'}}
+          </text>
+          <text class="apply-time">报名时间：{{formatTime(item.createdAt)}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 无报名记录 -->
+    <view class="no-applies" wx:if="{{filteredApplies.length === 0}}">
+      <text>暂无报名记录</text>
+    </view>
+  </view>
+</view>

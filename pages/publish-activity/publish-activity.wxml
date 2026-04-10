@@ -1,0 +1,105 @@
+<view class="container">
+  <view class="form">
+    <text class="form-title">发布活动</text>
+    
+    <view class="form-item">
+      <text class="label">活动标题</text>
+      <input 
+        class="input" 
+        placeholder="请输入活动标题" 
+        bindinput="onTitleChange"
+        value="{{formData.title}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">活动封面</text>
+      <view class="cover-upload">
+        <image 
+          class="cover-preview" 
+          src="{{formData.cover || '../../images/home.png'}}" 
+          mode="aspectFill"
+        ></image>
+        <button 
+          class="upload-button" 
+          bindtap="onUploadCover"
+        >
+          选择图片
+        </button>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">活动时间</text>
+      <input 
+        class="input" 
+        placeholder="请输入活动时间，如：2023-12-01 14:00"
+        bindinput="onTimeChange"
+        value="{{formData.time}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">活动地点</text>
+      <input 
+        class="input" 
+        placeholder="请输入活动地点" 
+        bindinput="onLocationChange"
+        value="{{formData.location}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">人数上限</text>
+      <input 
+        class="input" 
+        type="number" 
+        placeholder="请输入人数上限" 
+        bindinput="onMaxParticipantsChange"
+        value="{{formData.maxParticipants}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">截止时间</text>
+      <input 
+        class="input" 
+        placeholder="请输入报名截止时间，如：2023-11-30 23:59"
+        bindinput="onDeadlineChange"
+        value="{{formData.deadline}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">活动分类</text>
+      <picker 
+        class="picker" 
+        range="{{categories}}" 
+        bindchange="onCategoryChange"
+        value="{{formData.categoryIndex}}"
+      >
+        <view class="picker-content">
+          {{categories[formData.categoryIndex]}}
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">活动描述</text>
+      <textarea 
+        class="textarea" 
+        placeholder="请输入活动描述" 
+        bindinput="onDescriptionChange"
+        value="{{formData.description}}"
+      ></textarea>
+    </view>
+    
+    <button 
+      class="submit-button" 
+      bindtap="onSubmit"
+      disabled="{{!canSubmit}}"
+    >
+      发布活动
+    </button>
+  </view>
+</view>

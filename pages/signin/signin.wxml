@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="header">
+    <text class="title">活动签到</text>
+  </view>
+  
+  <view class="activity-info">
+    <text class="activity-title">{{activity.title}}</text>
+    <text class="activity-time">{{activity.time}}</text>
+    <text class="activity-location">{{activity.location}}</text>
+  </view>
+  
+  <view class="qrcode-section">
+    <text class="section-title">签到二维码</text>
+    <view class="qrcode-container">
+      <image class="qrcode" src="{{qrcodeUrl}}"></image>
+    </view>
+    <text class="qrcode-tip">请让参与者扫描此二维码进行签到</text>
+  </view>
+  
+  <view class="stats">
+    <text class="stats-item">总报名数：{{totalApplies}}</text>
+    <text class="stats-item">已签到：{{signedApplies}}</text>
+  </view>
+  
+  <button class="refresh-button" bindtap="refreshQrcode">
+    刷新二维码
+  </button>
+</view>

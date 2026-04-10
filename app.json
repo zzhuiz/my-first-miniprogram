@@ -1,27 +1,35 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/bind-info/bind-info",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/activity-detail/activity-detail",
+    "pages/my-applies/my-applies",
+    "pages/publish-activity/publish-activity",
+    "pages/activity-applies/activity-applies",
+    "pages/signin/signin",
+    "pages/signin-verify/signin-verify"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "校园社团活动",
     "navigationBarBackgroundColor": "#ffffff"
   },
   "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#07C160",
-    "backgroundColor": "#ffffff",
+    "color": "#8E8E93",
+    "selectedColor": "#007AFF",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "活动",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-active.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
+        "pagePath": "pages/my-applies/my-applies",
+        "text": "我的",
         "iconPath": "images/logs.png",
         "selectedIconPath": "images/logs-active.png"
       }

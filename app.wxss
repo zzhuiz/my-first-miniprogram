@@ -1,10 +1,202 @@
 /**app.wxss**/
+/* 全局样式 - 符合苹果设计标准 */
+
+/* 颜色变量 */
+:root {
+  --primary-color: #007AFF;
+  --secondary-color: #34C759;
+  --text-color: #000000;
+  --text-secondary: #8E8E93;
+  --background-color: #F2F2F7;
+  --card-background: #FFFFFF;
+  --border-color: #E5E5EA;
+  --error-color: #FF3B30;
+  --warning-color: #FF9500;
+}
+
+/* 全局重置 */
+page,
+view,
+text,
+image,
+button,
+input,
+textarea,
+scroll-view {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+page {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* 容器样式 */
 .container {
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 按钮样式 */
+.button {
+  width: 100%;
+  height: 88rpx;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-secondary {
+  background-color: var(--card-background);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.button-disabled {
+  background-color: #E5E5EA;
+  color: #8E8E93;
+  border: none;
+}
+
+/* 输入框样式 */
+.input {
+  width: 100%;
+  height: 88rpx;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0 20rpx;
+  font-size: 16px;
+  background-color: var(--card-background);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* 标题样式 */
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 24rpx;
+}
+
+/* 间距样式 */
+.mt-10 {
+  margin-top: 10rpx;
+}
+
+.mt-20 {
+  margin-top: 20rpx;
+}
+
+.mb-10 {
+  margin-bottom: 10rpx;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+/* 加载动画 */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+/* 空状态 */
+.empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+  justify-content: center;
+  padding: 100rpx 0;
+  color: var(--text-secondary);
+}
+
+/* 分割线 */
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 20rpx 0;
+}
+
+/* 阴影 */
+.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 圆角 */
+.rounded {
+  border-radius: 8px;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.rounded-full {
+  border-radius: 50%;
+}
+
+/* 文本截断 */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 多行文本截断 */
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  page {
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+}
+

@@ -1,0 +1,145 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: white;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.applies-list {
+  padding: 20rpx;
+}
+
+.apply-item {
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.apply-info {
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.apply-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.apply-studentId,
+.apply-college,
+.apply-phone {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+  display: block;
+}
+
+.apply-remark {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  display: block;
+  line-height: 1.5;
+}
+
+.apply-time {
+  font-size: 20rpx;
+  color: #999;
+  display: block;
+}
+
+.apply-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.status-badge {
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+  margin-bottom: 15rpx;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.action-button {
+  width: 120rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.action-button.approve {
+  background-color: #07C160;
+  color: white;
+}
+
+.action-button.reject {
+  background-color: #ff4757;
+  color: white;
+}
+
+.action-button.signin {
+  background-color: #1890ff;
+  color: white;
+}
+
+.signed-badge {
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.no-applies {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.stats {
+  background-color: white;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1rpx solid #eee;
+}
+
+.stats-item {
+  font-size: 24rpx;
+  color: #666;
+}

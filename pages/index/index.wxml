@@ -1,27 +1,63 @@
 <!--index.wxml-->
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+<view class="container">
+  <!-- 分类筛选 -->
+  <view class="category-filter">
+    <scroll-view scroll-x="true" class="category-scroll">
+      <view 
+        wx:for="{{categories}}" 
+        wx:key="{{item}}"
+        class="category-item {{currentCategory === item ? 'active' : ''}}"
+        bindtap="onCategoryChange"
+        data-category="{{item}}"
+      >
+        {{item}}
+      </view>
+    </scroll-view>
+  </view>
+  
+  <!-- 活动列表 -->
+  <view class="activity-list">
+    <view 
+      wx:for="{{activities}}" 
+      wx:key="{{item._id}}"
+      class="activity-item"
+      bindtap="onActivityTap"
+      data-id="{{item._id}}"
+    >
+      <view class="activity-cover">
+        <image src="{{item.cover || '../../images/home.png'}}" mode="aspectFill"></image>
+      </view>
+      <view class="activity-info">
+        <text class="activity-title">{{item.title}}</text>
+        <view class="activity-meta">
+          <text class="activity-time">{{item.time}}</text>
+          <text class="activity-location">{{item.location}}</text>
         </view>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+        <view class="activity-status">
+          <text class="participants">{{item.applyCount}}/{{item.maxParticipants}}人</text>
+          <text class="status {{item.applyCount >= item.maxParticipants ? 'full' : ''}}">
+            {{item.applyCount >= item.maxParticipants ? '已截止' : '可报名'}}
+          </text>
+        </view>
+      </view>
     </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
+    
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{hasMore}}">
+      <text bindtap="loadMore">加载更多</text>
+    </view>
+    
+    <!-- 无活动 -->
+    <view class="no-activity" wx:if="{{activities.length === 0}}">
+      <text>暂无活动</text>
     </view>
   </view>
-</scroll-view>
+  
+  <!-- 发布活动按钮 -->
+  <button 
+    class="publish-button" 
+    bindtap="onPublish"
+  >
+    + 发布活动
+  </button>
+</view>
