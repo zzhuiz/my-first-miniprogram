@@ -1,0 +1,27 @@
+# 微信小程序项目
+node_modules/
+dist/
+build/
+
+# 编辑器相关
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境变量
+.env
+.env.local
+
+# 日志文件
+logs/
+*.log
+
+# 临时文件
+tmp/
+temp/
